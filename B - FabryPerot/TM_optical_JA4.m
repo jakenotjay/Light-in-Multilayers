@@ -27,9 +27,9 @@ mumax=max(mu);
 mumin=min(mu);
 N=max(layer);			%number of layers
 
-lamda_min=600;                %minimum wavelength (nm)
-lamda_max=1100;               %maximum wavelength (nm)		
-npoints=2000;                 %number of points in wavelength scan
+lamda_min=400;                %minimum wavelength (nm)
+lamda_max=1300;               %maximum wavelength (nm)		
+npoints=10000;                 %number of points in wavelength scan
 
 % constants and parameters
 dlamda=(lamda_max-lamda_min)/npoints;		%wavelength increment (nm)
@@ -225,12 +225,12 @@ end
 fprintf(fileid, '%f %f \r\n', [xw; wf]);
 
 %plot each wave as subplot
-wfmin=min(wf);
-wfmax=max(wf);
-subplot(peakplotrows,peakplotcols,j),plot(xw,wf),axis([0,Lx(N)*1e9,wfmin,wfmax]);
-xlabel('position (nm)'),ylabel('wavefunction');
-ttl = sprintf('peak %3.0f of %3.0f, otherlamda=%3.1f nm, Ref=%1.5f',j,npeak,lamdapeak(j),Rpeak(j));
-title (ttl);
+% wfmin=min(wf);
+% wfmax=max(wf);
+% subplot(peakplotrows,peakplotcols,j),plot(xw,wf),axis([0,Lx(N)*1e9,wfmin,wfmax]);
+% xlabel('position (nm)'),ylabel('wavefunction');
+% ttl = sprintf('peak %3.0f of %3.0f, otherlamda=%3.1f nm, Ref=%1.5f',j,npeak,lamdapeak(j),Rpeak(j));
+% title (ttl);
 end  
 
 figure (4);
